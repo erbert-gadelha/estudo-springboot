@@ -1,0 +1,41 @@
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO - home</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+    <body>
+
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <div id="content">
+            <a>texto1</a>
+            <a href="google.com">texto2</a>
+
+
+            <table class="maxw_800">
+                <tr class="table-header">
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Peso</th>
+                </tr>
+
+                <tr class="table-item" th:each="animal : ${animais}">
+                    <td th:text="${animal.val1}"></td>
+                    <td th:text="${animal.val2}"></td>
+                    <td th:text="${animal.val3}"></td>
+                </tr>
+
+            </table>
+        </div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
+
+    </body>
+
+</html>

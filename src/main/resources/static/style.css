@@ -1,0 +1,808 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/*~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~*/
+    * {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lexend Deca", sans-serif;
+    }
+    :root {
+        --primary-color: rgb(36, 36, 36);
+        --secondary-color: rgb(255, 255, 255);
+        --light-grey: rgb(223, 223, 223);
+        --medium-grey: rgb(197, 197, 197);
+        --light-green: greenyellow;
+        --nav_height: 64px;
+        --footer_height: 64px;
+    }
+    html {
+        /*scroll-behavior: smooth;*/
+
+        background-color: #e5e5f7;
+        background-image: radial-gradient(#00000031 1.3px, #e7e7e7 1.3px);
+        background-size: 26px 26px;
+    }
+    #content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+        min-height: calc(100vh - var(--nav_height) - var(--footer_height));
+        height: fit-content;
+
+        padding: 16px 64px;
+    }
+/*~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~*/
+    #topbar{
+        position: fixed;
+        z-index: 100000;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        padding: 16px;
+        background-color: var(--primary-color);
+
+        height: var(--nav_height);
+        width: 100%;
+
+        color: var(--secondary-color);
+    }
+    #topbar span {
+        font-size: xx-large;
+    }
+    #topbar div {
+        display: flex;
+        gap: 8px;
+        font-size: large;
+    }
+    #topbar a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        position: relative;
+    }
+    #logo {
+        display: flex;
+        height: 40px;
+
+        gap:8px;
+
+        padding: 0;
+        margin: 0;
+    }
+    #logo span {
+        height: 100%;
+        text-transform: capitalize;
+    }
+    #logo img {
+        height: 100%;
+        width: auto;
+    }
+    #topbar a {
+        opacity: 0.9;
+    }
+    #topbar a p {
+        margin: 0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        background-color: transparent;
+    }
+    #topbar a p:hover {
+        color: var(--light-green);
+    }
+    #search_bar {
+        flex: 1;
+        position: relative;
+        max-width: 360px;
+        height: 40px;
+        margin: 0 16px;
+        overflow: hidden;
+        border-radius: 500px;
+    }
+    #search_bar:has(input:focus) {
+        border-radius: 8px;
+    }
+    #search_bar:has(input:not(:placeholder-shown)) {
+        border-radius: 8px;
+    }
+    #search_bar input {
+        width: 100%;
+        height: 100%;
+
+        padding: 0 16px;
+
+        border: none;
+        outline: none;
+
+        font-size: medium;
+    }
+    #search_bar button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    #search_bar #submit {
+        height: 100%;
+        padding: 0 16px;
+        background-color: var(--light-green);
+    }
+    #search_bar  #reset {
+        background-color: transparent;
+    }
+    #search_bar div {
+        display: none;
+        /*display: flex;*/
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: fit-content;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    #search_bar:has(input:not(:placeholder-shown)) div {
+        display: flex;
+    }
+    #go_up {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        padding: 8px 16px;
+        border-radius: 500px;
+        background-color: var(--primary-color);
+
+        color: white;
+        text-decoration: none;
+        z-index: 100000;
+    }
+    #go_up:hover {
+        color: var(--primary-color);
+        background-color: var(--light-green);
+        border-radius: 4px;
+        box-shadow: none;
+        border: 1px solid gray;
+    }
+    .space{
+        height: var(--nav_height);
+    }
+
+    #header_side_options {
+        position: relative;
+
+        height: 100%;
+        width: fit-content;
+
+        overflow: visible;
+    }
+    #header_side_options:hover {
+        color: var(--light-green);
+    }
+    #header_side_options form{
+        display: none;
+    }
+    #header_side_options form #checkmark {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        font-size: 48px;
+        font-weight: bold;
+    }
+/*~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~*/
+
+
+
+@media (max-width: 800px) {
+    #header_side_options {
+        position: relative;
+        /*background-color: var(--primary-color);*/
+        padding: 0;
+
+        width: 50px;
+        height: 50px;
+
+        overflow: hidden;
+        background-color: yellow !important;
+    }
+    #header_side_options form{
+        display: block;
+    }
+    #header_side_options:has(form>input:checked) {
+        overflow: visible;
+        color: var(--light-green);
+    }
+    #header_side_options .header_options {
+        background-color: var(--primary-color);
+        position: absolute;
+        right: 0px;
+        top: 72px;
+
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 100000;
+    }
+}
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~*/
+    footer  {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        padding: 0px 96px;
+        background-color: var(--primary-color);
+
+        height: var(--footer_height);
+        width: 100%;
+
+        color: var(--secondary-color);
+
+
+    }
+/*~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ GERALISTAS ~~~~~~~~~~~~*/
+    input:invalid {
+        background: whitesmoke;
+    }
+    .centralize {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .box_shadow {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .maxw_800 {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+    }
+    .round_border {
+        border-radius: 16px;
+        outline: 1px solid gray;
+    }
+    input:disabled {
+        opacity: 0.7;
+        background-color: #f3f3f3 !important;
+    }
+    textarea:disabled {
+        opacity: 0.7;
+        background-color: #f3f3f3 !important;
+    }
+    .not-selectable {
+        user-select: none;
+    }
+
+
+    .icon {
+        object-fit: cover;
+        fill: var(--secondary-color);
+    }
+    .icon:hover {
+        fill: var(--light-green);
+    }
+/*~~~~~~~~~~~~ GERALISTAS ~~~~~~~~~~~~*/
+
+
+
+
+
+/*~~~~~~~~~~~~ HOME-PAGE ~~~~~~~~~~~~*/
+    #page_home {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        justify-content: center;
+        gap: 16px;
+        max-width: 1116px;
+        margin: auto;
+    }
+    table {
+        background-color: whitesmoke;
+        width: 100%;
+        height: fit-content;
+    }
+
+    tr, td {
+        height: fit-content;
+        padding: 8px;
+    }
+
+    .table-header {
+        background-color: black;
+        color: white;
+        padding: 8px;
+    }
+
+    .table-item:nth-child(even) {
+        background-color: lightgrey;
+    }
+/*~~~~~~~~~~~~ HOME-PAGE ~~~~~~~~~~~~*/
+
+
+
+
+
+/*~~~~~~~~~~~~ POST-CARD ~~~~~~~~~~~~*/
+    #posts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1;
+        /*padding: 16px;*/
+        /*width: 100%;*/
+        /*margin: auto;*/
+    }
+    .post {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        background-color: white;
+        overflow: hidden;
+    }
+    .post .post_header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8x;
+        border-bottom: 1px solid gray;
+        gap: 16px;
+    }
+    .post .post_header .title {
+        margin: auto;
+    }
+    .post .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    .post .profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .post .profile span {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .post .date {
+        font-size: small;
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+    }
+    .post .post_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 16px;
+        background-color: whitesmoke;
+        text-decoration: none;
+        color: black;
+    }
+    .post .post_content p {
+        flex: 1;
+
+        padding: 16px;
+    }
+    .post .post_content img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        outline: gray solid 1px;
+        border-radius: 4px;
+    }
+/*~~~~~~~~~~~~ POST-CARD ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ POST-PAGE ~~~~~~~~~~~~*/
+    #page_post {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--light-grey);
+        width: 100%;
+        height: fit-content;
+        margin: 32px auto;
+        overflow: hidden;
+    }
+    #page_post .post_header {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid gray;
+    }
+    #page_post .post_header .profile{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+    }
+    #page_post .post_header .profile img{
+        height: 70px;
+        width: 70px;
+    }
+    #page_post .post_header .title{
+        margin: auto;
+    }
+    #page_post .post_header .date{
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+    }
+    #page_post .post_content {
+        width: 100%;
+        padding: 16px;
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+    #page_post .post_content img {
+        width: auto;
+        height: auto;
+
+        max-height: 360px;
+    }
+    #page_post .post_content p {
+        width: 100%;
+    }
+    #page_post .post_options {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        gap : 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background-color: whitesmoke;
+        border-radius: 0 0 0 16px;
+    }
+    #page_post .post_options button{
+        cursor: pointer;
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+    #page_post .post_options button:nth-of-type(1):hover{
+        color: orange;
+    }
+    #page_post .post_options button:nth-of-type(2):hover{
+        color: red;
+    }
+/*~~~~~~~~~~~~ POST-PAGE ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ LOGIN-PAGE ~~~~~~~~~~~~*/
+    .form_login {
+        background-color: white;
+        width: 100%;
+        margin: 32px 16px;
+        padding: 32px 16px 64px 16px;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+    .form_login input {
+        width: 100%;
+        height: 40px;
+        margin: 8px 0;
+        padding: 0 16px;
+        border: none;
+        outline: none;
+        font-size: medium;
+        border-radius: 500px;
+        border: 1px solid gray;
+    }
+    .form_login label {
+        margin-left: 8px;
+    }
+    .form_login #submit_button {
+        background-color: var(--light-green);
+        border: 1px solid gray;
+        cursor: pointer;
+    }
+    .form_login #submit_button:hover {
+        border-radius: 4px;
+    }
+    .form_login a {
+        width: 100%;
+    }
+    .error-message {
+        display: inline-block;
+
+        color: red;
+        min-height: 18px;
+        text-align: end;
+    }
+/*~~~~~~~~~~~~ LOGIN-PAGE ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ HOME-PAGE ~~~~~~~~~~~~*/
+    #write_post {
+        width: 100%;
+
+        top: calc(var(--nav_height) + 16px);
+        position: sticky;
+        max-width: 300px;
+        height: fit-content;
+
+        /*left: none;
+        margin-left: 100%;*/
+
+    }
+    #write_post form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        background-color: whitesmoke;
+        /*margin: auto;*/
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    #write_post textarea {
+        width: 100%;
+        height: 100px;
+        padding: 16px;
+        border: none;
+        outline: none;
+        font-size: medium;
+        resize: none;
+        border-radius: 16px;
+        border: 1px solid gray;
+    }
+    #write_post input {
+        height: 40px;
+        padding: 16px;
+        border: none;
+        outline: none;
+        font-size: medium;
+        background-color: white;
+        border-radius: 16px;
+        border: 1px solid gray;;
+    }
+    #write_post button {
+        width: 100%;
+        height: 40px;
+
+        border: none;
+        outline: none;
+        font-size: medium;
+        background-color: var(--light-green);
+        border-radius: 500px;
+        cursor: pointer;
+        border: 1px solid gray;
+    }
+    #write_post button:hover {
+        border-radius: 4px;
+    }
+    #write_post div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    #write_post div input {
+        width: 100%;
+        max-width: 240px;
+    }
+/*~~~~~~~~~~~~ HOME-PAGE ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ USER-PAGE ~~~~~~~~~~~~*/
+    #page_user {
+        display: flex;
+        /*flex-direction: column;*/
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+        max-width: 1000px;
+    }
+    #page_user #profile_card {
+        position: sticky;
+        top: calc(var(--nav_height) + 8px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        gap: 4px;
+        padding: 32px;
+        background-color: white;
+        height: fit-content;
+    }
+    #page_user #profile_card img {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 16px;
+    }
+    #page_user #profile_card div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        padding: 16px;
+        background-color: whitesmoke;
+        border-radius: 16px;
+    }
+    #page_user #profile_posts{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        /*margin: auto;*/
+        justify-content: start;
+        align-items: flex-end;
+    }
+    #page_user #profile_posts .post{
+        margin: 0 !important;
+    }
+/*~~~~~~~~~~~~ USER-PAGE ~~~~~~~~~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~ MEDIA-QUERY ~~~~~~~~~~~~*/
+    @media (max-width: 800px) {
+        body {
+            font-size: 14px;
+        }
+        #write_post textarea {
+            height: 80px;
+        }
+        #write_post input {
+            height: 30px;
+        }
+        /*#topbar #logo span {
+            display: none;
+        }*/
+        #content {
+            padding: 16px 5%;
+        }
+    }
+
+   @media (max-width: 1200px) {
+
+        #page_user {
+            flex-direction: column;
+        }
+        #page_user #profile_card {
+            position: relative;
+            top: 0;
+            width: 100%;
+            flex-direction: row;
+        }
+        #page_user #profile_card img {
+            width: 120px;
+            height: 120px;
+            margin: 0;
+        }
+
+
+        #write_post  {
+            width: 100%;
+            max-width: 800px;
+            position: static;
+        }
+        #write_post form {
+            box-shadow: none;
+        }
+        #write_post form div {
+            flex-direction: row;
+        }
+        #write_post div input {
+            width: 49%;
+        }
+        #posts{
+            width: 100%;
+            max-width: 800px;
+        }
+        #page_home {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+/*~~~~~~~~~~~~ MEDIA-QUERY ~~~~~~~~~~~~*/

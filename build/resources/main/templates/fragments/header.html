@@ -1,0 +1,45 @@
+
+<header th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <nav id="topbar" class="box_shadow">
+        <a id="logo" href="/">
+            <span>TODO</span>
+        </a>
+
+        <div id="header_side_options" class="not-selectable">
+            <form>
+                <input type="checkbox" id="myCheckbox">
+                <label for="myCheckbox" id="checkmark" class="material-symbols-outlined">
+                    menu
+                </label>
+            </form>
+
+
+
+            <!--
+            <div id="header_options">
+                <a href="/login"><p>login</p></a>
+                <a href="/register"><p>register</p></a>
+            </div>
+            -->
+
+            <div id="header_options">
+                <a th:if="${username == null}" href="/login"><p>login</p></a>
+                <a th:if="${username == null}" href="/register"><p>register</p></a>
+
+
+
+                <a th:if="${username != null}"><p th:text="${username}"></p></a>
+                <a th:if="${username != null}" href="/logout"><p>sair</p></a>
+            </div>
+
+
+
+
+        </div>
+    </nav>
+
+    <a id="go_up" class="box_shadow" href="#top"> Ir para o topo! </a>
+
+    <div div="top" class="space"></div>
+</header>

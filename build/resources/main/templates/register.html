@@ -1,0 +1,37 @@
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO - register</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    </head>
+
+    <body>
+
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <div id="content">
+            <form class="form_login maxw_800 round_border" action="/api/user" method="post" >
+                <label for="login">login</label>
+                <input type="text" required name="login" id="login" placeholder="ex: viniccius13" minlength="1" maxlength="15">
+                <br>
+                <label for="name">nome</label>
+                <input type="text" required name="name" id="name" placeholder="ex: Vinição" minlength="1" maxlength="20">
+                <br>
+                <label for="password">senha</label>
+                <input type="password" required name="password" id="password" placeholder="Password" minlength="4" maxlength="20">
+                <br>
+                <input id="submit_button" type="submit" value="Register">
+                <a href="/login">login</a>
+            </form>
+        </div>
+
+        <div th:replace="~{fragments/footer :: footer}"></div>
+
+    </body>
+
+</html>
